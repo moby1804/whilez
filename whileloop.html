@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>While Loop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>
+      Welcome, Moby you have some queries to review
+      <table id="tableBody">
+        <tr>
+          <th>ID</th>
+          <th>Student</th>
+          <th>Query</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+        <tr id="tRows"></tr>
+      </table>
+      <script>
+        const queries = [
+          {
+            id: 1,
+            student: "Genesis",
+            query: "Permission to absent from tech class",
+            status: "APPROVED",
+          },
+          {
+            id: 2,
+            student: "Nunya",
+            query: "Permission to Absa Hackathon",
+            status: "APPROVED",
+          },
+          {
+            id: 3,
+            student: "Fleeur",
+            query: "Permission to shoot film",
+            status: "DECLINED",
+          },
+          {
+            id: 4,
+            student: "Delight",
+            query: "Need some delightful time to cool off",
+            status: "DECLINED",
+          },
+          {
+            id: 5,
+            student: "Sila",
+            query: "Permission to participate in Absa Hackathon",
+            status: "PENDING",
+          },
+        ];
+        var tablerows = document.getElementById("tableBody");
+        var i = 0;
+        while (i < queries.length) {
+          let object = queries[i];
+          let row = document.createElement("tr");
+
+          let idcell = document.createElement("td");
+          idcell.textContent = object.id;
+
+          let studentcell = document.createElement("td");
+          studentcell.textContent = object.student;
+
+          let querycell = document.createElement("td");
+          querycell.textContent = object.query;
+
+          let statuscell = document.createElement("td");
+          statuscell.textContent = object.status;
+
+          let actioncell = document.createElement("td");
+          actioncell.innerHTML = `<a href="#">APPROVED</a> <a href="#">DECLINED</a>`;
+
+          row.appendChild(idcell);
+          row.appendChild(studentcell);
+          row.appendChild(querycell);
+          row.appendChild(statuscell);
+          row.appendChild(actioncell);
+
+          tableBody.appendChild(row);
+          i++;
+        }
+      </script>
+    </h1>
+  </body>
+</html>
